@@ -29,7 +29,6 @@
         NSString *stickerImage = call.arguments[@"stickerImage"];
         NSString *backgroundTopColor = call.arguments[@"backgroundTopColor"];
         NSString *backgroundBottomColor = call.arguments[@"backgroundBottomColor"];
-        NSString *attributionURL = call.arguments[@"attributionURL"];
         NSString *backgroundImage = call.arguments[@"backgroundImage"];
         NSString *backgroundVideo = call.arguments[@"backgroundVideo"];
         
@@ -57,11 +56,7 @@
         if (![backgroundBottomColor isKindOfClass:[NSNull class]]) {
             [pasteboardItems setObject:backgroundBottomColor forKey:[NSString stringWithFormat:@"%@.backgroundBottomColor",destination]];
         }
-        
-        if (![attributionURL isKindOfClass:[NSNull class]]) {
-            [pasteboardItems setObject:attributionURL forKey:[NSString stringWithFormat:@"%@.contentURL",destination]];
-        }
-        
+
         if (![appId isKindOfClass:[NSNull class]] && [@"shareFacebookStory" isEqualToString:call.method]) {
             [pasteboardItems setObject:appId forKey:[NSString stringWithFormat:@"%@.appID",destination]];
         }
